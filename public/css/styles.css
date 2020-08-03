@@ -1,0 +1,133 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.header,
+.footer {
+    background-color: rgba(181, 181, 48, 0.577);
+    border: 3px solid yellow;
+}
+
+.content {
+    min-height: 100%;
+}
+
+.content-inside {
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+.pageBottom {
+    height: 50px;
+    margin-top: -50px;
+}
+
+.ground {
+    background-color: forestgreen;
+}
+
+body {
+    background-color: lightskyblue;
+}
+
+.bmc-button img {
+    height: 34px !important;
+    width: 35px !important;
+    margin-bottom: 1px !important;
+    box-shadow: none !important;
+    border: none !important;
+    vertical-align: middle !important;
+}
+
+.bmc-button {
+    padding: 7px 15px 7px 10px !important;
+    line-height: 35px !important;
+    height: 51px !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    color: #ffffff !important;
+    background-color: #FF5F5F !important;
+    border-radius: 5px !important;
+    border: 1px solid transparent !important;
+    padding: 7px 15px 7px 10px !important;
+    font-size: 22px !important;
+    letter-spacing: 0.6px !important;
+    box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;
+    -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+    margin: 0 auto !important;
+    font-family: 'Cookie', cursive !important;
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+.bmc-button:hover,
+.bmc-button:active,
+.bmc-button:focus {
+    -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+    text-decoration: none !important;
+    box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+    opacity: 0.85 !important;
+    color: #ffffff !important;
+}
+
+.link:hover,
+.link:active,
+.link:focus {
+    -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5);
+    text-decoration: none !important;
+    box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5);
+    opacity: 0.85;
+}
+
+.link {
+    padding: 7px 15px 7px 10px !important;
+    line-height: 35px !important;
+    height: 51px !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    border-radius: 5px !important;
+    border: 1px solid transparent !important;
+    padding: 7px 15px 7px 10px !important;
+    font-size: 22px !important;
+    letter-spacing: 0.6px !important;
+    box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;
+    -webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
+    margin: 0 auto !important;
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+#facebook {
+    color: white;
+    background-color: blue;
+    border: 1px solid darkblue;
+}
+
+#facebook:hover {
+    color: blue;
+    background-color: white;
+}
+
+#twitter {
+    color: white;
+    background-color: lightblue;
+    border: 1px solid lightseagreen;
+}
+
+#twitter:hover {
+    color: lightblue;
+    background-color: white;
+}
+
+#github {
+    color: black;
+    background-color: gray;
+    border: 1px solid darkgrey;
+}
+
+#github:hover {
+    color: gray;
+    background-color: black;
+}
