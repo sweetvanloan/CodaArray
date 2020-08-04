@@ -14,7 +14,6 @@ const userSchema = new mongoose.Schema({
     language: {
         type: String,
         enum: ["Ruby", "JavaScript", "C#", "C++", "Python", "Java", "Swift", "PHP", "Perl", "Go"],
-        required: true
     },
     journal: [journalSchema],
 });

@@ -31,7 +31,7 @@ passport.use(
 );
 
 passport.serializeUser(function(user, done) {
-    done(null, student.id);
+    done(null, user.id);
 });
 
 passport.deserializeUser(function(id, done) {
