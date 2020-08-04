@@ -15,19 +15,31 @@
         <div class="content-inside">
             <header>
                 <div class="header">
-                    <h1>Coding with Coda Array</h1>
-                    <h2>by Sweet Van Loan</h2>
+                    <h1>Welcome to Journals!</h1>
                 </div>
             </header>
-
+            <button><a href="/">Return Home</a> </button>
+            <button><a href="/">See Your Profile</a> </button>
+            <button><a href="/">Return Home</a> </button>
 
             <section class="codaCity">
                 <p>Things go here</p>
             </section>
-            <button><a href="/journal">See Entries</a></button>
-            <button><a href=""></a></button>
+            <section class="codaCity">also here</section>
+            <section class="codaCity">and here</section>
+            <section class="codaCity">also here</section>
         </div>
     </div>
+
+    <tbody>
+        <% users.forEach( users => { %>
+            <tr>
+                <td>
+                    <%= users.journal %>
+                </td>
+                <% }) %>
+            </tr>
+    </tbody>
 
 
     <div class="pageBottom">
