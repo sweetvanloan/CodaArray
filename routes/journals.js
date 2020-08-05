@@ -4,7 +4,8 @@ const journalCtrl = require("../controllers/journals")
 
 router.get('/', journalCtrl.index);
 router.post('/', isLoggedIn, journalCtrl.addEntry);
-router.delete("/journals/:id", isLoggedIn, journalCtrl.delEntry);
+router.delete("/:id", isLoggedIn, journalCtrl.delEntry);
+router.put("/:id", isLoggedIn, journalCtrl.editEntry)
 
 
 function isLoggedIn(req, res, next) {

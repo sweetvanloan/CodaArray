@@ -4,6 +4,7 @@ const User = require("../models/user")
 module.exports = {
     addEntry,
     delEntry,
+    editEntry,
     index
 }
 
@@ -18,16 +19,23 @@ function index(req, res) {
 }
 
 function addEntry(req, res) {
-    console.log("REQQ.BODY I  ADDENTRY ", req.body)
     req.user.journal.push(req.body);
     req.user.save(function(err) {
-        res.redirect("/journals/")
+        res.redirect("/user/")
 
     })
 }
 
 function delEntry(req, res) {
-    req.user.journal._id.delete(req.body);
-    res.redirect("/journals/")
-        // req.user.journal.deleteOne(req.params);
+    req.user.journal.pull(req.params.id);
+    req.user.save(function(err) {
+        res.redirect("/user/")
+    })
+}
+
+function editEntry(req, res) {
+    req.user.journal.pull(req.params.id);
+    req.user.save(function(err) {
+        res.redirect("/user/")
+    })
 }

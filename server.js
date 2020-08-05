@@ -7,6 +7,7 @@ const indexRouter = require("./routes/index");
 const userRouter = require("./routes/users");
 const journalRouter = require("./routes/journals");
 const skillsRouter = require("./routes/skills");
+const methodOverride = require("method-override")
 
 require("dotenv").config();
 require("./config/database");
@@ -18,6 +19,7 @@ require("./config/database");
 
 app.set("view engine", "ejs");
 
+app.use(methodOverride("_method"));
 app.use(morgan("dev"));
 app.use(express.static("public"));
 app.use(

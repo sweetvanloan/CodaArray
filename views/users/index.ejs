@@ -60,15 +60,21 @@
                             <button type="submit">Add Entry</button>
                         </form>
 
+
                         <div class="userJournal">
                             <% user.journal.forEach(function(item) { %>
                                 <h5>
                                     <%= user.name%>'s Entry</h5>
+                                <form action="/journals/<%= item._id %>?_method=DELETE" method="post">
+                                    <button type="submit">DELETE</button>
+                                </form>
+                                <form action="/journals/<%= item._id %>" method="put">
+                                    <button type="submit">Edit</button>
+                                </form>
                                 <p>
                                     <%= item.entry %>
                                 </p>
                                 <% }) %>
-
                         </div>
 
 
@@ -77,6 +83,9 @@
                         <% } else { %>
                             <h2>You are not currently logged in</h2>
                             <a href="/auth/google">Login with Google</a>
+                            <h5>
+                                <!-- user journal when not logged in -->
+                            </h5>
                             <% } %>
                 </h3>
             </div>
