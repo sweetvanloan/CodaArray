@@ -1,19 +1,22 @@
 const User = require("../models/user")
+    // const Skill = require("../models/skill")
 
 module.exports = {
-    sayName,
     index
 }
 
-function sayName() {
-    //have the user screen say "hello, <username>"
-}
 
 function index(req, res) {
-    User.find({}, function(err, users) {
+    // console.log("Req.user is ", req.user)
+
+    User.findById(
+        req.user._id
+    ).populate("journal").exec(function(err, user) {
+        console.log("USER IS: ", user);
+        console.log("REQ.USER IS ", req.user);
         res.render('users/index', {
-            users,
-            user: req.user
+            user,
+            // user: req.user
         });
     });
 }

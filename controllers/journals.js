@@ -1,5 +1,5 @@
-const User = require("../models/user");
-// const Skill = require("../models/skill")
+const User = require("../models/user")
+    // const Skill = require("../models/skill")
 
 module.exports = {
     addEntry,
@@ -9,7 +9,6 @@ module.exports = {
 
 function index(req, res) {
     User.find({}, function(err, users) {
-        console.log("users is: ", users)
         res.render("journals/index", {
             users,
             user: req.user
@@ -18,10 +17,17 @@ function index(req, res) {
     })
 }
 
-function addEntry() {
-    //allows user to add an entry to their journal
+function addEntry(req, res) {
+    console.log("REQQ.BODY I  ADDENTRY ", req.body)
+    req.user.journal.push(req.body);
+    req.user.save(function(err) {
+        res.redirect("/journals/")
+
+    })
 }
 
-function delEntry() {
-    //allows user to delete an entry from their journal 
+function delEntry(req, res) {
+    req.user.journal._id.delete(req.body);
+    res.redirect("/journals/")
+        // req.user.journal.deleteOne(req.params);
 }

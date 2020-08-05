@@ -38,9 +38,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", indexRouter);
+app.use("/journals", journalRouter);
 app.use("/user", userRouter);
-app.use("/journal", journalRouter);
-app.use("/", skillsRouter);
+app.use("/skills", skillsRouter);
 
 app.listen(port, function() {
     console.log("Express is listening. I love you 3000!");

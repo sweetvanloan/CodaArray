@@ -2,7 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const journalSchema = new Schema({
-    Entry: String,
+    entry: String,
+    date: {
+        type: Date
+    }
 });
 
 
