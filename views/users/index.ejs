@@ -35,22 +35,13 @@
                 <a href="/">Coding with Coda Array</a>
                 <h3>
                     <% if (user) { %>
-                        <h2>Welcome,
+                        <h2 class="username">Welcome,
                             <%= user.name%>
                         </h2>
-                        <form action="/journals/" method="Post">
-                            <select name="language">
-                            <option value="Ruby">Ruby</option>
-                            <option value="JavaScriptC#">JavaScriptC#</option>
-                            <option value="C#">C#</option>
-                            <option value="C++">C++</option>
-                            <option value="Python">Python</option>
-                            <option value="Java">Java</option>
-                            <option value="Swift">Swift</option>
-                            <option value="PHP">PHP</option>
-                            <option value="Perl">Perl</option>
-                            <option value="Go">Go</option>
-                        </select>
+
+
+                        <form action="/skills/" method="Post">
+                            <input type="text" name="skill">
                             <select name="level">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -58,7 +49,7 @@
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
-                            <input type="submit" value="Add Skill" name="skill">
+                            <input type="submit" value="Add Skill">
                         </form>
 
 

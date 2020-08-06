@@ -3,7 +3,6 @@ const router = express.Router();
 const skillCtrl = require("../controllers/skills")
 
 router.get("/", skillCtrl.index);
-router.post("/", skillCtrl.addSkill)
 router.post("/", isLoggedIn, skillCtrl.addSkill)
 
 
