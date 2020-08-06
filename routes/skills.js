@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const skillCtrl = require("../controllers/skills")
+const skillCtrl = require("../controllers/skills");
+const skill = require("../models/skill");
 
-router.get("/", skillCtrl.index);
+
 router.post("/", isLoggedIn, skillCtrl.addSkill)
-
+router.delete("/:id", isLoggedIn, skillCtrl.delSkill)
 
 
 function isLoggedIn(req, res, next) {

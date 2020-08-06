@@ -1,11 +1,11 @@
 const User = require("../models/user")
 const Skill = require("../models/skill")
+const user = require("../models/user")
 
 module.exports = {
     addSkill,
     delSkill,
     editSkill,
-    index
 }
 
 function addSkill(req, res) {
@@ -23,13 +23,40 @@ function addSkill(req, res) {
 }
 
 function delSkill(req, res) {
-
+    const skillIdx = req.user.skill.indexOf(req.params.id);
+    req.user.skill.splice(skillIdx, 1);
+    Skill.findByIdAndDelete(req.params.id, function(err) {
+        req.user.save(function(err) {
+            res.redirect("/user/")
+        })
+    });
 }
 
-function index() {
 
-}
+function editSkill(req, res) {
+    const thisSkillIdx = req.user.skill.indexOf(req.params.id);
 
-function editSkill() {
+    thisSkillIdx.findByIdAndUpdate(req.params.id, function(err) {
+
+
+    })
+
+
+    $(".submit").click(function() {
+
+
+        const userInput = $("#userInput").val();
+
+        console.log(userInput);
+
+        const newElement = "<p>" + userInput + "</p>"
+
+        $("#page").append(newElement)
+    });
+
+
+    req.user.save(function(err) {
+        res.redirect("/user/")
+    })
 
 }

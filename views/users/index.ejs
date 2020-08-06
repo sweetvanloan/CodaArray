@@ -61,13 +61,17 @@
 
                             <p class="skills">
                                 <% if (user) { %>
-                                    <form action="/journals/<%= s._id %>?_method=DELETE" method="post">
+                                    <form action="/skills/<%= s._id %>?_method=DELETE" method="post">
 
-                                        <button type="submit"></button>
+                                        <button type="submit">X</button>
                                     </form>
-
+                                    Skill:
                                     <%= s.skill %>
+                                        Level:
                                         <%= s.level %>
+                                            <form action="/skills/<%= s._id %>" method="GET">
+                                                <button type="submit">Edit</button>
+                                            </form>
                                             <%  } %>
                             </p>
                             <% }) %>
@@ -94,11 +98,7 @@
                                         </form>
 
 
-                                        <!-- <form action="/journals/?" method="put"> -->
-                                        <!-- <a href="/journals/edit">
-                                    <button>Edit</button>
-                                </a> -->
-                                        <!-- </form> -->
+
 
                                         <form action="/journals/edit/<%= item._id %>" method="GET">
                                             <button type="submit">Edit</button>

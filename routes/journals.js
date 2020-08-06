@@ -9,6 +9,7 @@ router.delete("/:id", isLoggedIn, journalCtrl.delEntry);
 router.put("/edit/:id", isLoggedIn, journalCtrl.editEntry)
 
 
+
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) return next();
     res.redirect("/auth/google")
