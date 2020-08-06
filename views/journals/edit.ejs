@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+    </script>
+    <title>Coding with Coda Array by @sweetvanloan</title>
+</head>
+
+<body>
+    <nav>
+        <div>
+            <a href="/">Coding with Coda Array</a>
+            <ul>
+                <% if (user) { %>
+                    <a href="/logout">Logout </a>
+                    <% } else { %>
+                        <a href="/auth/google">Login with Google</a>
+                        <% } %>
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="content-inside">
+            <header>
+                <div class="header">
+                </div>
+            </header>
+
+
+
+
+
+            <div class="edit">
+                <form action="/journals/edit/<%= journal._id%>?_method=PUT" method="post">
+                    <input type="text" value="<%= journal.entry %>" name="entry">
+                    <button type="submit" method="put">Save</button>
+                </form>
+            </div>
+
+
+
+
+            <button><a href="/journals/">See Entries</a></button>
+            <button><a href="/">Return Home</a></button>
+        </div>
+    </div>
+
+
+    <div class="pageBottom">
+        <div class="socialButtons">
+            <a href="https://www.facebook.com/CodingWithCoda/" id="facebook" class="link"><img><span style="margin-left:5px;font-size:28px !important;">Facebook</span></a>
+            <a href="https://twitter.com/CodingWithCoda" id="twitter" class="link"><img><span style="margin-left:5px;font-size:28px !important;">Twitter</span></a>
+            <a href="https://github.com/sweetvanloan" id="github" class="link"><img><span style="margin-left:5px;font-size:28px !important;">Github</span></a>
+            <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/sweetvanloan"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a Coffee"><span style="margin-left:5px;font-size:28px !important;">Buy me a Coffee</span></a>
+            <a id="dev" class="link" href="https://dev.to/sweetvanloan">
+                <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Sweet Van Loan's DEV Profile" height="34" width="35">
+            </a>
+            </span>
+        </div>
+
+
+        <footer>
+            <div class="ground"></div>
+            <div class="footer">
+                <p class="footLinks">Share to Twitter</p>
+                <p class="footLinks">Tweet to Coda</p>
+                <p class="footLinks">Share to Facebook</p>
+                <p class="specialThanks">Special Thanks:</p>
+                <p class="sweetDev">Cheif Developer: Sweet Van Loan</p>
+            </div>
+
+        </footer>
+    </div>
+
+</body>
+
+</html>

@@ -3,9 +3,10 @@ const router = express.Router();
 const journalCtrl = require("../controllers/journals")
 
 router.get('/', journalCtrl.index);
+router.get("/edit/:id", isLoggedIn, journalCtrl.editor)
 router.post('/', isLoggedIn, journalCtrl.addEntry);
 router.delete("/:id", isLoggedIn, journalCtrl.delEntry);
-router.put("/:id", isLoggedIn, journalCtrl.editEntry)
+router.put("/edit/:id", isLoggedIn, journalCtrl.editEntry)
 
 
 function isLoggedIn(req, res, next) {

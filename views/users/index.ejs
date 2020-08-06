@@ -63,14 +63,27 @@
 
                         <div class="userJournal">
                             <% user.journal.forEach(function(item) { %>
+
                                 <h5>
                                     <%= user.name%>'s Entry</h5>
+
                                 <form action="/journals/<%= item._id %>?_method=DELETE" method="post">
+
                                     <button type="submit">DELETE</button>
                                 </form>
-                                <form action="/journals/<%= item._id %>" method="put">
+
+
+                                <!-- <form action="/journals/?" method="put"> -->
+                                <!-- <a href="/journals/edit">
+                                    <button>Edit</button>
+                                </a> -->
+                                <!-- </form> -->
+
+                                <form action="/journals/edit/<%= item._id %>" method="GET">
                                     <button type="submit">Edit</button>
                                 </form>
+
+
                                 <p>
                                     <%= item.entry %>
                                 </p>
