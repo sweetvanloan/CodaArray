@@ -54,52 +54,73 @@
 
 
 
-                        <h2>Your Journal</h2>
-                        <form action="/journals/" method="Post">
-                            <input type="text" name="entry">
-                            <button type="submit">Add Entry</button>
-                        </form>
+                        <h2>
+                            <%= user.name%>'s skills
+                        </h2>
+                        <% user.skill.forEach(function(s) { %>
+
+                            <p class="skills">
+                                <% if (user) { %>
+                                    <form action="/journals/<%= s._id %>?_method=DELETE" method="post">
+
+                                        <button type="submit"></button>
+                                    </form>
+
+                                    <%= s.skill %>
+                                        <%= s.level %>
+                                            <%  } %>
+                            </p>
+                            <% }) %>
 
 
-                        <div class="userJournal">
-                            <% user.journal.forEach(function(item) { %>
 
-                                <h5>
-                                    <%= user.name%>'s Entry</h5>
 
-                                <form action="/journals/<%= item._id %>?_method=DELETE" method="post">
-
-                                    <button type="submit">DELETE</button>
+                                <h2>Your Journal</h2>
+                                <form action="/journals/" method="Post">
+                                    <input type="text" name="entry">
+                                    <button type="submit">Add Entry</button>
                                 </form>
 
 
-                                <!-- <form action="/journals/?" method="put"> -->
-                                <!-- <a href="/journals/edit">
+                                <div class="userJournal">
+                                    <% user.journal.forEach(function(item) { %>
+
+                                        <h5>
+                                            <%= user.name%>'s Entry</h5>
+
+                                        <form action="/journals/<%= item._id %>?_method=DELETE" method="post">
+
+                                            <button type="submit">DELETE</button>
+                                        </form>
+
+
+                                        <!-- <form action="/journals/?" method="put"> -->
+                                        <!-- <a href="/journals/edit">
                                     <button>Edit</button>
                                 </a> -->
-                                <!-- </form> -->
+                                        <!-- </form> -->
 
-                                <form action="/journals/edit/<%= item._id %>" method="GET">
-                                    <button type="submit">Edit</button>
-                                </form>
-
-
-                                <p>
-                                    <%= item.entry %>
-                                </p>
-                                <% }) %>
-                        </div>
+                                        <form action="/journals/edit/<%= item._id %>" method="GET">
+                                            <button type="submit">Edit</button>
+                                        </form>
 
 
+                                        <p>
+                                            <%= item.entry %>
+                                        </p>
+                                        <% }) %>
+                                </div>
 
-                        <!-- Can we place the user's image via URL? -->
-                        <% } else { %>
-                            <h2>You are not currently logged in</h2>
-                            <a href="/auth/google">Login with Google</a>
-                            <h5>
-                                <!-- user journal when not logged in -->
-                            </h5>
-                            <% } %>
+
+
+                                <!-- Can we place the user's image via URL? -->
+                                <% } else { %>
+                                    <h2>You are not currently logged in</h2>
+                                    <a href="/auth/google">Login with Google</a>
+                                    <h5>
+                                        <!-- user journal when not logged in -->
+                                    </h5>
+                                    <% } %>
                 </h3>
             </div>
 

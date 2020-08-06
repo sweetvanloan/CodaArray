@@ -9,7 +9,7 @@ module.exports = {
 function index(req, res) {
     User.findById(
         req.user._id
-    ).populate("journal").exec(function(err, user) {
+    ).populate("journal").populate("skill").exec(function(err, user) {
         res.render('users/index', {
             user
         });

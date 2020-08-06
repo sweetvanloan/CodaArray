@@ -15,7 +15,6 @@ function addSkill(req, res) {
     req.user.skill.push(skill._id)
         //save both user and skill
     skill.save(function(err) {
-
         req.user.save(function(err) {
             res.redirect("/user/")
         })
@@ -23,8 +22,8 @@ function addSkill(req, res) {
 
 }
 
-function delSkill() {
-    //allows users to delete skills on their user profile and only their profile 
+function delSkill(req, res) {
+
 }
 
 function index() {
