@@ -4,6 +4,7 @@ const Skill = require("../models/skill")
 module.exports = {
     addSkill,
     delSkill,
+    editSkill,
     index
 }
 
@@ -19,5 +20,9 @@ function delSkill() {
 }
 
 function index() {
+
+}
+
+function editSkill() {
 
 }

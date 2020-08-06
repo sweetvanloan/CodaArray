@@ -7,7 +7,6 @@ const skillSchema = new Schema({
         type: Number,
         max: 5,
         min: 1,
-        required: true,
         default: 1
     }
 });

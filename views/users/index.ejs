@@ -38,7 +38,7 @@
                         <h2>Welcome,
                             <%= user.name%>
                         </h2>
-                        <form action="/user/" method="Post">
+                        <form action="/journals/" method="Post">
                             <select name="language">
                             <option value="Ruby">Ruby</option>
                             <option value="JavaScriptC#">JavaScriptC#</option>
@@ -51,8 +51,17 @@
                             <option value="Perl">Perl</option>
                             <option value="Go">Go</option>
                         </select>
-                            <input type="submit" value="Add Skill">
+                            <select name="level">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                            <input type="submit" value="Add Skill" name="skill">
                         </form>
+
+
 
                         <h2>Your Journal</h2>
                         <form action="/journals/" method="Post">

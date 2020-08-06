@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const skill = require("./skill")
 
 const journalSchema = new Schema({
     entry: String,
@@ -19,6 +20,10 @@ const userSchema = new mongoose.Schema({
         enum: ["Ruby", "JavaScript", "C#", "C++", "Python", "Java", "Swift", "PHP", "Perl", "Go"],
     },
     journal: [journalSchema],
+    skill: [{
+        type: Schema.Types.ObjectId,
+        ref: "Skill"
+    }]
 });
 
 module.exports = mongoose.model("User", userSchema);
