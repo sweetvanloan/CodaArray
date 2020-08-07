@@ -17,6 +17,7 @@ Coda Array is an coding journal-app for indvidiuals learning to code. This parti
 - Node.js
 - OAuth via Google
 - Materialize
+- Heroku
 
 
 ## Getting Started
@@ -25,6 +26,8 @@ To use the prototype, use the following link: [Click Here](https://coda-journal.
 
 ## Coming Soon
 - User will be able to veiw other user's page, but not edit them.
+- User will have timestamped entries.
+- Users will have response emoji buttons.
 - User will view a more seamless design.
 - UX will improve via hover information on all functions
 - UI will improve via OAuth via Twitter & Facebook for ease of login.
