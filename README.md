@@ -33,4 +33,5 @@ To use the prototype, use the following link: [Click Here](https://coda-journal.
 - User will be able to "follow" other users' journals.
 - User will have a profile picture, default will be the profile pic via the authentication route user used to login.
 - User will have access to articles about coding languages, tricks & tips, and people-to-watch in STEM.
+- User can view the app in Spanish & French.
 
