@@ -4,9 +4,9 @@ Coda Array is an coding journal-app for indvidiuals learning to code. This parti
 
 ## Screenshots 
 ![alt "The image of Coda, an African-American girl with her dark hair in twists, then pigtails" ](public/img/codaOveralls.png)
-![alt "Screenshot of the landing page, before the user logs in" ](public/img/Screen%20Shot%202020-08-06%20at%2011.42.47%20PM.png)
-![alt "Screenshot of the user page wherewithin all the journal functions lay" ](public/img/Screen%20Shot%202020-08-06%20at%2011.43.47%20PM.png)
-![alt "Screenshot of the journal for a user" ](public/img/Screen%20Shot%202020-08-06%20at%2011.44.08%20PM.png)
+![alt "Screenshot of the landing page, before the user logs in" ](public/img/SS1.png)
+![alt "Screenshot of the user page wherewithin all the journal functions lay" ](public/img/SS2.png)
+![alt "Screenshot of the journal for a user" ](public/img/SS3.png)
 
 ## Technologies 
 - JavaScript
