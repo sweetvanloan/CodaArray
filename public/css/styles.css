@@ -1,10 +1,14 @@
+main {
+    flex: 1 0 auto;
+}
+
 .all {
     margin-left: 20px;
     margin-right: 20px;
 }
 
 .end {
-    margin: 100px
+    margin-bottom: 100px;
 }
 
 .content {
@@ -18,12 +22,13 @@
 
 .pageBottom {
     height: 50px;
-    margin-top: -50px;
-    display: block;
 }
 
 body {
     background-color: lightskyblue;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .bmc-button img {
@@ -152,4 +157,9 @@ body {
 
 button {
     background-color: aliceblue;
+}
+
+.level {
+    background-color: aquamarine;
+    border: 2px, solid, blue;
 }

@@ -20,7 +20,7 @@
 
     <nav>
         <div class="nav-wrapper #311b92 deep-purple darken-4">
-            <a href="#" class="brand-logo">Coding with Coda</a>
+            <a href="#" class="brand-logo">Coding with Coda </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
                     <% if (user) { %>
@@ -36,94 +36,99 @@
     </nav>
 
 
-    <div class="all">
-        <h3>
-            <% if (user) { %>
-                <h2 class="username">Welcome,
-                    <%= user.name%>
-                </h2>
+    <main>
+
+
+        <div class="all">
+            <h3>
+                <% if (user) { %>
+                    <h2 class="username">Welcome,
+                        <%= user.name%>
+                    </h2>
 
 
 
 
-                <form action="/skills/" method="Post">
-                    <input type="text" name="skill">
-                    <select name="level">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                    <input type="submit" value="Add Skill">
-                </form>
+                    <form action="/skills/" method="Post">
+                        <input type="text" name="skill" value="Add Skill Here">
+                        <select name="level" class="level">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                        <input type="submit" value="Add Skill">
+                    </form>
 
 
 
-                <h2>
-                    <%= user.name%>'s skills
-                </h2>
-                <% user.skill.forEach(function(s) { %>
+                    <h2>
+                        <%= user.name%>'s skills
+                    </h2>
+                    <% user.skill.forEach(function(s) { %>
 
-                    <p class="skills">
-                        <% if (user) { %>
-                            <form action="/skills/<%= s._id %>?_method=DELETE" method="post">
+                        <p class="skills">
+                            <% if (user) { %>
+                                <form action="/skills/<%= s._id %>?_method=DELETE" method="post">
 
-                                <button type="submit">X</button>
+                                    <button type="submit">X</button>
+                                </form>
+                                Skill:
+                                <%= s.skill %>
+                                    Level:
+                                    <%= s.level %>
+                                        <%  } %>
+                        </p>
+                        <% }) %>
+
+
+
+
+                            <h2>Your Journal</h2>
+                            <form action="/journals/" method="Post">
+                                <input type="text" name="entry" value="Add Entry Here">
+                                <button type="submit">Add Entry</button>
                             </form>
-                            Skill:
-                            <%= s.skill %>
-                                Level:
-                                <%= s.level %>
-                                    <%  } %>
-                    </p>
-                    <% }) %>
+
+
+                            <div class="userJournal">
+                                <% user.journal.forEach(function(item) { %>
+
+                                    <h5>
+                                        <%= user.name%>'s Entry</h5>
+
+                                    <form action="/journals/<%= item._id %>?_method=DELETE" method="post">
+
+                                        <button type="submit">DELETE</button>
+                                    </form>
 
 
 
 
-                        <h2>Your Journal</h2>
-                        <form action="/journals/" method="Post">
-                            <input type="text" name="entry">
-                            <button type="submit">Add Entry</button>
-                        </form>
+                                    <form action="/journals/edit/<%= item._id %>" method="GET">
+                                        <button type="submit">Edit</button>
+                                    </form>
 
 
-                        <div class="userJournal">
-                            <% user.journal.forEach(function(item) { %>
-
-                                <h5>
-                                    <%= user.name%>'s Entry</h5>
-
-                                <form action="/journals/<%= item._id %>?_method=DELETE" method="post">
-
-                                    <button type="submit">DELETE</button>
-                                </form>
+                                    <p>
+                                        <%= item.entry %>
+                                    </p>
+                                    <% }) %>
+                            </div>
 
 
 
+                            <% } else { %>
+                                <h2>You are not currently logged in</h2>
+                                <a href="/auth/google">Login with Google</a>
+                                <% } %>
+            </h3>
+        </div>
 
-                                <form action="/journals/edit/<%= item._id %>" method="GET">
-                                    <button type="submit">Edit</button>
-                                </form>
+        <h2 class="End">That's all of your entries!</h2>
 
-
-                                <p>
-                                    <%= item.entry %>
-                                </p>
-                                <% }) %>
-                        </div>
-
-
-
-                        <% } else { %>
-                            <h2>You are not currently logged in</h2>
-                            <a href="/auth/google">Login with Google</a>
-                            <% } %>
-        </h3>
-    </div>
-
-    <h2 class="End">That's all of your entries!</h2>
+    </main>
 
     <div class="pageBottom">
         <div class="socialButtons">
@@ -138,7 +143,7 @@
         </div>
 
 
-        </footer>
+
         <footer class="page-footer #311b92 deep-purple darken-4">
             <div class="container">
                 <div class="row">

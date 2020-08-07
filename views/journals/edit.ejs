@@ -36,19 +36,19 @@
 
 
 
+    <main>
+
+        <div class="edit">
+            <form action="/journals/edit/<%= journal._id%>?_method=PUT" method="post">
+                <input type="text" value="<%= journal.entry %>" name="entry">
+                <button type="submit" method="put">Save</button>
+            </form>
+        </div>
 
 
-    <div class="edit">
-        <form action="/journals/edit/<%= journal._id%>?_method=PUT" method="post">
-            <input type="text" value="<%= journal.entry %>" name="entry">
-            <button type="submit" method="put">Save</button>
-        </form>
-    </div>
 
 
-
-
-
+    </main>
 
 
 
@@ -65,7 +65,7 @@
         </div>
 
 
-        </footer>
+
         <footer class="page-footer #311b92 deep-purple darken-4">
             <div class="container">
                 <div class="row">
