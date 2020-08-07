@@ -1,7 +1,9 @@
 const User = require("../models/user");
+
 const {
     db
 } = require("../models/user");
+
 
 module.exports = {
     addEntry,

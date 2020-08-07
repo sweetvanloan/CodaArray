@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
     </script>
@@ -12,42 +18,38 @@
 
 <body>
     <nav>
-        <div>
-            <a href="/">Coding with Coda Array</a>
-            <ul>
-                <% if (user) { %>
-                    <a href="/logout">Logout </a>
-                    <% } else { %>
-                        <a href="/auth/google">Login with Google</a>
-                        <% } %>
+        <div class="nav-wrapper #311b92 deep-purple darken-4">
+            <a href="#" class="brand-logo">Coding with Coda</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <% if (user) { %>
+                        <a href="/logout">Logout </a>
+                        <% } else { %>
+                            <a href="/auth/google">Login with Google</a>
+                            <% } %>
+                                <li><a href="/">Home</a></li>
+                                <a href="/user/">See Profile</a>
+                </li>
             </ul>
         </div>
     </nav>
-    <div class="content">
-        <div class="content-inside">
-            <header>
-                <div class="header">
-                </div>
-            </header>
 
 
 
 
 
-            <div class="edit">
-                <form action="/journals/edit/<%= journal._id%>?_method=PUT" method="post">
-                    <input type="text" value="<%= journal.entry %>" name="entry">
-                    <button type="submit" method="put">Save</button>
-                </form>
-            </div>
-
-
-
-
-            <button><a href="/journals/">See Entries</a></button>
-            <button><a href="/">Return Home</a></button>
-        </div>
+    <div class="edit">
+        <form action="/journals/edit/<%= journal._id%>?_method=PUT" method="post">
+            <input type="text" value="<%= journal.entry %>" name="entry">
+            <button type="submit" method="put">Save</button>
+        </form>
     </div>
+
+
+
+
+
+
 
 
     <div class="pageBottom">
@@ -63,16 +65,29 @@
         </div>
 
 
-        <footer>
-            <div class="ground"></div>
-            <div class="footer">
-                <p class="footLinks">Share to Twitter</p>
-                <p class="footLinks">Tweet to Coda</p>
-                <p class="footLinks">Share to Facebook</p>
-                <p class="specialThanks">Special Thanks:</p>
-                <p class="sweetDev">Cheif Developer: Sweet Van Loan</p>
+        </footer>
+        <footer class="page-footer #311b92 deep-purple darken-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Special Thanks:</h5>
+                        <p class="grey-text text-lighten-4">Daniel Scott, Morgan Pierson, Melissa Young, Connie Lancaster, Mac Jankowski, David Fontenot & Sarah King
+                        </p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Links</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Share to Twitter</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Tweet to Coda</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2020 Copyright
+                </div>
+            </div>
         </footer>
     </div>
 

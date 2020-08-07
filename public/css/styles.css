@@ -1,13 +1,10 @@
-html,
-body {
-    height: 100%;
-    margin: 0;
+.all {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-.header,
-.footer {
-    background-color: rgba(181, 181, 48, 0.577);
-    border: 3px solid yellow;
+.end {
+    margin: 100px
 }
 
 .content {
@@ -22,10 +19,7 @@ body {
 .pageBottom {
     height: 50px;
     margin-top: -50px;
-}
-
-.ground {
-    background-color: forestgreen;
+    display: block;
 }
 
 body {
@@ -134,4 +128,28 @@ body {
 
 #dev {
     background-color: rgb(255, 250, 205);
+}
+
+.coda {
+    height: 500px;
+}
+
+.codaCity {
+    background-color: white;
+}
+
+#wrapper {
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+#content {
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+
+button {
+    background-color: aliceblue;
 }

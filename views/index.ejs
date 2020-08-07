@@ -4,69 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
     </script>
     <title>Coding with Coda Array by @sweetvanloan</title>
 </head>
 
+
+
 <body>
+
     <nav>
-        <div>
-            <a href="">Coding with Coda Array</a>
-            <ul>
-                <% if (user) { %>
-                    <a href="/logout">Logout </a>
-                    <% } else { %>
-                        <a href="/auth/google">Login with Google</a>
-                        <% } %>
+        <div class="nav-wrapper #311b92 deep-purple darken-4">
+            <a href="#" class="brand-logo">Coding with Coda</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <% if (user) { %>
+                        <a href="/logout">Logout </a>
+                        <% } else { %>
+                            <a href="/auth/google">Login with Google</a>
+                            <% } %>
+                                <li><a href="/">Home</a></li>
+                                <a href="/user/">See Profile</a>
+                </li>
             </ul>
         </div>
     </nav>
-    <div class="content">
-        <div class="content-inside">
-            <header>
-                <div class="header">
-                    <h1>Coding with Coda Array</h1>
-                    <h2>by Sweet Van Loan</h2>
-                </div>
-            </header>
+
+    <% if (user) { %>
+        <h2 class="username">
+            Welcome,
+            <%= user.name%>
+        </h2>
+        <% } %>
 
 
             <section class="codaCity">
-                <p>Things go here</p>
+                <p>Hiya, My name is Coda! I am very excited you're here. Are you learning how to code like me? Great!
+                    <br> I am logging my coding journey in my journal! Why don't you make one, too? Just log on with your Google account, and let's start journaling!
+                </p>
             </section>
-            <button><a href="/user/">See Profile</a></button>
-            <button><a href="/journals/">See Journals</a></button>
-        </div>
-    </div>
 
-
-    <div class="pageBottom">
-        <div class="socialButtons">
-            <a href="https://www.facebook.com/CodingWithCoda/" id="facebook" class="link"><img><span style="margin-left:5px;font-size:28px !important;">Facebook</span></a>
-            <a href="https://twitter.com/CodingWithCoda" id="twitter" class="link"><img><span style="margin-left:5px;font-size:28px !important;">Twitter</span></a>
-            <a href="https://github.com/sweetvanloan" id="github" class="link"><img><span style="margin-left:5px;font-size:28px !important;">Github</span></a>
-            <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/sweetvanloan"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a Coffee"><span style="margin-left:5px;font-size:28px !important;">Buy me a Coffee</span></a>
-            <a id="dev" class="link" href="https://dev.to/sweetvanloan">
-                <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Sweet Van Loan's DEV Profile" height="34" width="35">
-            </a>
-            </span>
-        </div>
-
-
-        <footer>
-            <div class="ground"></div>
-            <div class="footer">
-                <p class="footLinks">Share to Twitter</p>
-                <p class="footLinks">Tweet to Coda</p>
-                <p class="footLinks">Share to Facebook</p>
-                <p class="specialThanks">Special Thanks:</p>
-                <p class="sweetDev">Cheif Developer: Sweet Van Loan</p>
+            <div class="images">
+                <img src="/img/codaOveralls.png" alt="Coda's Image" class="coda">
             </div>
 
-        </footer>
-    </div>
+
+            <div class="pageBottom">
+                <div class="socialButtons">
+                    <a href="https://www.facebook.com/CodingWithCoda/" id="facebook" class="link"><img><span style="margin-left:5px;font-size:28px !important;">Facebook</span></a>
+                    <a href="https://twitter.com/CodingWithCoda" id="twitter" class="link"><img><span style="margin-left:5px;font-size:28px !important;">Twitter</span></a>
+                    <a href="https://github.com/sweetvanloan" id="github" class="link"><img><span style="margin-left:5px;font-size:28px !important;">Github</span></a>
+                    <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/sweetvanloan"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a Coffee"><span style="margin-left:5px;font-size:28px !important;">Buy me a
+                    Coffee</span></a>
+                    <a id="dev" class="link" href="https://dev.to/sweetvanloan">
+                        <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Sweet Van Loan's DEV Profile" height="34" width="35">
+                    </a>
+                    </span>
+                </div>
+
+
+                <footer>
+
+
+                </footer>
+                <footer class="page-footer #311b92 deep-purple darken-4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col l6 s12">
+                                <h5 class="white-text">Special Thanks:</h5>
+                                <p class="grey-text text-lighten-4">Daniel Scott, Morgan Pierson, Melissa Young, Connie Lancaster, Mac Jankowski, David Fontenot & Sarah King
+                                </p>
+                            </div>
+                            <div class="col l4 offset-l2 s12">
+                                <h5 class="white-text">Links</h5>
+                                <ul>
+                                    <li><a class="grey-text text-lighten-3" href="#!">Share to Twitter</a></li>
+                                    <li><a class="grey-text text-lighten-3" href="#!">Tweet to Coda</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-copyright">
+                        <div class="container">
+                            © 2020 Copyright
+                        </div>
+                    </div>
+                </footer>
+            </div>
 
 </body>
 

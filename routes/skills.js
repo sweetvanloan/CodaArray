@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const skillCtrl = require("../controllers/skills");
-const skill = require("../models/skill");
 
 
 router.post("/", isLoggedIn, skillCtrl.addSkill)

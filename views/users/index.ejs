@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
     </script>
@@ -11,127 +17,113 @@
 </head>
 
 <body>
+
     <nav>
-        <div>
-            <a href="/">Coding with Coda Array</a>
-            <ul>
-                <% if (user) { %>
-                    <a href="/logout">Logout </a>
-                    <% } else { %>
-                        <a href="/auth/google">Login with Google</a>
-                        <% } %>
+        <div class="nav-wrapper #311b92 deep-purple darken-4">
+            <a href="#" class="brand-logo">Coding with Coda</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <% if (user) { %>
+                        <a href="/logout">Logout </a>
+                        <% } else { %>
+                            <a href="/auth/google">Login with Google</a>
+                            <% } %>
+                                <li><a href="/">Home</a></li>
+                                <a href="/user/">See Profile</a>
+                </li>
             </ul>
         </div>
     </nav>
-    <div class="content">
-        <div class="content-inside">
-            <header>
-                <div class="header">
-                </div>
-            </header>
 
 
-            <div>
-                <a href="/">Coding with Coda Array</a>
-                <h3>
-                    <% if (user) { %>
-                        <h2 class="username">Welcome,
-                            <%= user.name%>
-                        </h2>
+    <div class="all">
+        <h3>
+            <% if (user) { %>
+                <h2 class="username">Welcome,
+                    <%= user.name%>
+                </h2>
 
 
-                        <form action="/skills/" method="Post">
-                            <input type="text" name="skill">
-                            <select name="level">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                            <input type="submit" value="Add Skill">
+
+
+                <form action="/skills/" method="Post">
+                    <input type="text" name="skill">
+                    <select name="level">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                    <input type="submit" value="Add Skill">
+                </form>
+
+
+
+                <h2>
+                    <%= user.name%>'s skills
+                </h2>
+                <% user.skill.forEach(function(s) { %>
+
+                    <p class="skills">
+                        <% if (user) { %>
+                            <form action="/skills/<%= s._id %>?_method=DELETE" method="post">
+
+                                <button type="submit">X</button>
+                            </form>
+                            Skill:
+                            <%= s.skill %>
+                                Level:
+                                <%= s.level %>
+                                    <%  } %>
+                    </p>
+                    <% }) %>
+
+
+
+
+                        <h2>Your Journal</h2>
+                        <form action="/journals/" method="Post">
+                            <input type="text" name="entry">
+                            <button type="submit">Add Entry</button>
                         </form>
 
 
+                        <div class="userJournal">
+                            <% user.journal.forEach(function(item) { %>
 
-                        <h2>
-                            <%= user.name%>'s skills
-                        </h2>
-                        <% user.skill.forEach(function(s) { %>
+                                <h5>
+                                    <%= user.name%>'s Entry</h5>
 
-                            <p class="skills">
-                                <% if (user) { %>
-                                    <form action="/skills/<%= s._id %>?_method=DELETE" method="post">
+                                <form action="/journals/<%= item._id %>?_method=DELETE" method="post">
 
-                                        <button type="submit">X</button>
-                                    </form>
-                                    Skill:
-                                    <%= s.skill %>
-                                        Level:
-                                        <%= s.level %>
-                                            <form action="/skills/<%= s._id %>" method="GET">
-                                                <button type="submit">Edit</button>
-                                            </form>
-                                            <%  } %>
-                            </p>
-                            <% }) %>
-
-
-
-
-                                <h2>Your Journal</h2>
-                                <form action="/journals/" method="Post">
-                                    <input type="text" name="entry">
-                                    <button type="submit">Add Entry</button>
+                                    <button type="submit">DELETE</button>
                                 </form>
 
 
-                                <div class="userJournal">
-                                    <% user.journal.forEach(function(item) { %>
-
-                                        <h5>
-                                            <%= user.name%>'s Entry</h5>
-
-                                        <form action="/journals/<%= item._id %>?_method=DELETE" method="post">
-
-                                            <button type="submit">DELETE</button>
-                                        </form>
 
 
+                                <form action="/journals/edit/<%= item._id %>" method="GET">
+                                    <button type="submit">Edit</button>
+                                </form>
 
 
-                                        <form action="/journals/edit/<%= item._id %>" method="GET">
-                                            <button type="submit">Edit</button>
-                                        </form>
-
-
-                                        <p>
-                                            <%= item.entry %>
-                                        </p>
-                                        <% }) %>
-                                </div>
+                                <p>
+                                    <%= item.entry %>
+                                </p>
+                                <% }) %>
+                        </div>
 
 
 
-                                <!-- Can we place the user's image via URL? -->
-                                <% } else { %>
-                                    <h2>You are not currently logged in</h2>
-                                    <a href="/auth/google">Login with Google</a>
-                                    <h5>
-                                        <!-- user journal when not logged in -->
-                                    </h5>
-                                    <% } %>
-                </h3>
-            </div>
-
-
-
-
-            <button><a href="/journals/">See Entries</a></button>
-            <button><a href="/">Return Home</a></button>
-        </div>
+                        <% } else { %>
+                            <h2>You are not currently logged in</h2>
+                            <a href="/auth/google">Login with Google</a>
+                            <% } %>
+        </h3>
     </div>
 
+    <h2 class="End">That's all of your entries!</h2>
 
     <div class="pageBottom">
         <div class="socialButtons">
@@ -146,16 +138,29 @@
         </div>
 
 
-        <footer>
-            <div class="ground"></div>
-            <div class="footer">
-                <p class="footLinks">Share to Twitter</p>
-                <p class="footLinks">Tweet to Coda</p>
-                <p class="footLinks">Share to Facebook</p>
-                <p class="specialThanks">Special Thanks:</p>
-                <p class="sweetDev">Cheif Developer: Sweet Van Loan</p>
+        </footer>
+        <footer class="page-footer #311b92 deep-purple darken-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Special Thanks:</h5>
+                        <p class="grey-text text-lighten-4">Daniel Scott, Morgan Pierson, Melissa Young, Connie Lancaster, Mac Jankowski, David Fontenot & Sarah King
+                        </p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Links</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="#!">Share to Twitter</a></li>
+                            <li><a class="grey-text text-lighten-3" href="#!">Tweet to Coda</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2020 Copyright
+                </div>
+            </div>
         </footer>
     </div>
 

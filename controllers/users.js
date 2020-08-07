@@ -1,5 +1,4 @@
-const User = require("../models/user")
-    // const Skill = require("../models/skill")
+const User = require("../models/user");
 
 module.exports = {
     index
