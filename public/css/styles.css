@@ -140,7 +140,7 @@ body {
 }
 
 .codaCity {
-    background-color: white;
+    background-color: rgb(88, 121, 143);
 }
 
 #wrapper {
@@ -157,9 +157,45 @@ body {
 
 button {
     background-color: aliceblue;
+    margin: 3px;
 }
 
 .level {
     background-color: aquamarine;
     border: 2px, solid, blue;
+}
+
+.skillsb {
+    display: flex;
+    align-items: left;
+}
+
+.journalb {
+    display: flex;
+    align-items: left;
+}
+
+p {
+    margin: 10px;
+    font-size: 40px;
+    font-family: Comic Sans MS, cursive, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Comic Sans MS", cursive, sans-serif
+}
+
+.delete,
+.edit {
+    background-color: darkslateblue;
+    color: white;
+}
+
+.newSkill {
+    font-size: 15px;
 }

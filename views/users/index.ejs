@@ -68,18 +68,27 @@
                     </h2>
                     <% user.skill.forEach(function(s) { %>
 
-                        <p class="skills">
-                            <% if (user) { %>
-                                <form action="/skills/<%= s._id %>?_method=DELETE" method="post">
+                        <div class="skillsb">
+                            <p class="skills">
+                                <% if (user) { %>
+                                    <form action="/skills/<%= s._id %>?_method=DELETE" method="post">
 
-                                    <button type="submit">X</button>
-                                </form>
-                                Skill:
-                                <%= s.skill %>
-                                    Level:
-                                    <%= s.level %>
-                                        <%  } %>
-                        </p>
+                                        <button type="submit">X</button>
+                                    </form>
+                                    <div class="skillLevel">
+
+                                        <h6 class="newSkill">
+                                            Skill:
+                                            <%= s.skill %>
+                                        </h6>
+                                        <h6>
+                                            Level:
+                                            <%= s.level %>
+                                        </h6 class="newSkill">
+                                    </div>
+                                    <%  } %>
+                            </p>
+                        </div>
                         <% }) %>
 
 
@@ -96,19 +105,20 @@
                                 <% user.journal.forEach(function(item) { %>
 
                                     <h5>
-                                        <%= user.name%>'s Entry</h5>
+                                        <%= user.name%>'s Entry:</h5>
+                                    <div class="journalb">
+                                        <form action="/journals/<%= item._id %>?_method=DELETE" method="post">
 
-                                    <form action="/journals/<%= item._id %>?_method=DELETE" method="post">
-
-                                        <button type="submit">DELETE</button>
-                                    </form>
-
-
+                                            <button type="submit" class="delete">DELETE</button>
+                                        </form>
 
 
-                                    <form action="/journals/edit/<%= item._id %>" method="GET">
-                                        <button type="submit">Edit</button>
-                                    </form>
+
+
+                                        <form action="/journals/edit/<%= item._id %>" method="GET">
+                                            <button type="submit" class="edit">Edit</button>
+                                        </form>
+                                    </div>
 
 
                                     <p>
@@ -155,8 +165,9 @@
                     <div class="col l4 offset-l2 s12">
                         <h5 class="white-text">Links</h5>
                         <ul>
-                            <li><a class="grey-text text-lighten-3" href="#!">Share to Twitter</a></li>
-                            <li><a class="grey-text text-lighten-3" href="#!">Tweet to Coda</a></li>
+                            <li><a class="grey-text text-lighten-3" href="https://twitter.com/home?status=https://coda-journal.herokuapp.com/ I helped out @sweetvanloan and checked out her project, @CodingWithCoda! Check it out if you have a Google account!  Here is the link: https://coda-journal.herokuapp.com/user/#TechTwitter #BlackTechTwitter  #womenwhocode #womenintech">Share
+                                    to Twitter</a></li>
+                            <li><a class="grey-text text-lighten-3" href="Hey, @CodingWithCoda! I saw your prototype!">Tweet to Coda</a></li>
                         </ul>
                     </div>
                 </div>
